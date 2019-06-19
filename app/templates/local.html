@@ -1,0 +1,23 @@
+
+{% block content %}
+<html>
+<form action="" method="POST">
+    <title> Insercao de um Local </title>
+    <h1> Insercao de um Local </h1>
+
+    <h2> Digite o nome: </h2>
+    {{ form.csrf_token }}
+    <label> Nome </label>
+    {{ form.nome(class="form-control")}}
+    <h3> Digite a cidade: </h3>
+    <label> Cidade </label>
+    {{ form.cidade(class="form-control")}}
+    <h4> Digite a capacidade </h4>
+    <label> Capacidade </label>
+    {{ form.capacidade(class="form-control")}}
+    <h5>
+    {{ form.submit(class="form-control") }}
+    </h5>
+</form>
+</html>
+{% endblock %}

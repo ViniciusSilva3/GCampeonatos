@@ -1,0 +1,19 @@
+{% block content %}
+<html>
+<form action="" method="POST">
+    <title> Criacao de uma conta </title>
+    <h1> Criacao de uma conta </h1>
+
+    <h2> Digite o seu Usuario: </h2>
+    {{ form.csrf_token }}
+    <label> Usuario </label>
+    {{ form.nome(class="form-control")}}
+    <h3> Digite sua Senha: </h3>
+    <label> Senha </label>
+    {{ form.senha(class="form-control")}}
+    <h4>
+    {{ form.submit(class="form-control") }}
+    </h4>
+</form>
+</html>
+{% endblock %}

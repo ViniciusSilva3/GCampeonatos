@@ -1,0 +1,36 @@
+Lista de querys utilizados para o banco de dados:
+CREATE DATABASE GCampeonatos;
+
+use GCampeonatos;
+
+create table tb_local (
+    tblocal_id int AUTO_INCREMENT,
+    tblocal_nome varchar(35),
+    tblocal_cidade varchar(35),
+    tblocal_capacidade int,
+    PRIMARY KEY(tblocal_id)
+);
+
+create table tb_user (
+    tbuser_id int AUTO_INCREMENT,
+    tbuser_nome varchar(35),
+    tbuser_senha varchar(35),
+    tbuser_tipo int,
+    tbuser_time int,
+    foreign key(tbuser_time) references tb_time(tbtime_id),
+    PRIMARY KEY(tbuser_id)
+);
+
+create table tb_time (
+    tbtime_id int AUTO_INCREMENT,
+    tbtime_nome varchar(35),
+    tbtime_modalidade int,
+    foreign key (tbtime_modalidade) references tb_modalidade(tbmodalidade_id),
+    PRIMARY KEY(tbtime_id)
+);
+
+create table tb_modalidade (
+    tbmodalidade_id int AUTO_INCREMENT,
+    tbmodalidade_nome varchar(35),
+    PRIMARY KEY(tbmodalidade_id)
+);
