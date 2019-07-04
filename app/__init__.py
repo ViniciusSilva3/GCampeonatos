@@ -16,3 +16,7 @@ app.config['SECRET_KEY'] = "felipeayres"
 
 from app.controllers import default
 from app.controllers import usercontroller
+from app.controllers import logincontroller
+from app.controllers import menu
+from app.controllers import timecontroller
+from app.controllers import campeonatoscontroller

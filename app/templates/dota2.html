@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <div style = "display:inline-block">
+    <h2> Lista de Campeonatos de dota2 </h2>
+            {%for i in range(0, tamanho2)%}
+            <h3> {{lista2[i]}} </h3>
+                {%for j in range(0, lista[2*i+1])%}
+            <h2style = "display:inline;"> {{lista[2*i][j]}} </h2>
+            <h2style = "display:inline;"> x </h2>
+            <h2style = "display:inline;"> {{lista[2*(i+1)][j]}} </h2>
+            <h2> </h2>
+                {%endfor%}
+            {%endfor%}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% block content %}
+<html>
+    <body>
+    <div>
+    <h2> Lista de jogadores disponiveis </h2>
+        
+        <ol>
+            {%for i in range(0, tamanho)%}
+            <li>{{ lista[i] }}</li>
+            {%endfor%}
+        </ol>
+    <h2> Lista de Modalidades por id </h2>
+        <ol>
+            {%for i in range(0, tamanho2)%}
+            <li>{{ lista2[i] }}</li>
+            {%endfor%}
+        </ol>
+    </div>
+    <form action="" method="POST">
+        <title> Criacao de um Time</title>
+        <h1> Criacao de um Time </h1>
+        {{ form.csrf_token }}
+        <h4> Digite o nome do Time: </h4>
+        {{ form.nome(class="form-control")}}
+        <h4> Digite o id da modalidade: </h4>
+   
+        {{ form.modalidade(class="form-control")}}
+        <h4> Digite o Segundo jogador: </h4>
+       
+        {{ form.jogador2(class="form-control")}}
+        <h4> Digite o Segundo jogador: </h4>
+       
+        {{ form.jogador3(class="form-control")}}
+        <h4> Digite o Segundo jogador: </h4>
+        
+        {{ form.jogador4(class="form-control")}}
+        <h4> Digite o Segundo jogador: </h4>
+       
+        {{ form.jogador5(class="form-control")}}
+        <h2>
+        {{ form.submit(class="form-control") }}
+        </h2>
+    </form>
+    </body>
+{% endblock %}
+</html>

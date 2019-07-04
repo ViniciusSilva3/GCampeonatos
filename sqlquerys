@@ -34,3 +34,28 @@ create table tb_modalidade (
     tbmodalidade_nome varchar(35),
     PRIMARY KEY(tbmodalidade_id)
 );
+
+create table tb_partida (
+    tbpartida_id int AUTO_INCREMENT,
+    tbpartida_time1 int,
+    tbpartida_time2 int,
+    tbpartida_vencedor int,
+    tbpartida_campeonato int,
+    foreign key(tbpartida_campeonato) references tb_campeonato(tbcampeonato_id),
+    foreign key(tbpartida_time1) references tb_time(tbtime_id),
+    foreign key(tbpartida_time2) references tb_time(tbtime_id),
+    PRIMARY KEY(tbpartida_id)
+);
+
+create table tb_campeonato (
+    tbcampeonato_id int AUTO_INCREMENT,
+    tbcampeonato_nome varchar(35),
+    tbcampeonato_premiacao int,
+    tbcampeonato_dataini DATE,
+    tbcampeonato_datafim DATE,
+    tbcampeonato_modalidade int,
+    tbcampeonato_local int,
+    foreign key(tbcampeonato_modalidade) references tb_modalidade(tbmodalidade_id),
+    foreign key(tbcampeonato_local) references tb_local(tblocal_id),
+    PRIMARY KEY(tbcampeonato_id)
+);
