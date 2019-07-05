@@ -25,10 +25,6 @@ def login():
     if request.method == "POST":
         nome1 = request.form['nome']
         senha1 = request.form['senha']
-        # a sequencia a seguir serve para gerar um hash para a senha a ser inserida
-        #salt = "a8kl"
-        #db_password = senha1 + salt
-        #h = hashlib.md5(db_password.encode())
         ############################################################################
         # inserindo no banco de dados
         cur = mysql.connection.cursor()

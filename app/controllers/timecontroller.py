@@ -44,7 +44,6 @@ def novotime():
             dadosobtidos = cur.fetchall()
             dadosobtidos = list(dadosobtidos)
             timeid = dadosobtidos[0][0]
-            print(timeid)
             # eh necessario alterar o time de todos os jogadores na tabela de users
             cur.execute('''update tb_user set tbuser_time = %s where tbuser_nome = (%s)''',(timeid, current_user.nome))
             mysql.connection.commit()

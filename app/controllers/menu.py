@@ -9,6 +9,6 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 @app.route("/home/menu", methods=["GET","POST"])
 def menu():
     if current_user.is_authenticated:
-        return render_template('menu.html', title = current_user.nome, paragrafo = current_user.tipo)
+        return render_template('menu.html', title = current_user.nome)
     else:
         return render_template('home.html')

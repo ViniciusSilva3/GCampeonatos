@@ -10,10 +10,6 @@ def user1():
     if request.method == "POST":
         nome1 = request.form['nome']
         senha1 = request.form['senha']
-        # a sequencia a seguir serve para gerar um hash para a senha a ser inserida
-        #salt = "a8kl"
-        #db_password = senha1 + salt
-        #h = hashlib.md5(db_password.encode())
         ############################################################################
         # inserindo no banco de dados
         time = 1 # nao pode ser 0, pois o banco comeca em 0

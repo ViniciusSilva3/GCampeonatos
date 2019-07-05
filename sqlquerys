@@ -59,3 +59,15 @@ create table tb_campeonato (
     foreign key(tbcampeonato_local) references tb_local(tblocal_id),
     PRIMARY KEY(tbcampeonato_id)
 );
+
+create table tb_patrocinador (
+    tbpatrocinador_id int AUTO_INCREMENT,
+    tbpatrocinador_nome varchar(35),
+    PRIMARY KEY(tbpatrocinador_id)
+);
+
+create table tb_equipcobertura (
+    tbequipcobertura_id int AUTO_INCREMENT,
+    tbequipcobertura_nome varchar(35),
+    PRIMARY KEY(tbequipcobertura_id)
+);

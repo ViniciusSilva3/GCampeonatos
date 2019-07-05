@@ -31,21 +31,21 @@ def dota2():
     #array para passar de parametro para o html
     for i in range(0, tamanho2):
         lista2.append(str(dadosobtidos[i][0]))
-    print(lista2)
     # query para montar a tabela das partidas de um dado campeonato
     lista = []
     for j in range(0, tamanho2): # arrumar o for para tamanho2
-        cur.execute('''select tb_time.tbtime_nome from tb_time inner join tb_partida on tb_time.tbtime_id = tb_partida.tbpartida_time1 inner join tb_campeonato on tb_partida.tbpartida_campeonato = tb_campeonato.tbcampeonato_id where tb_campeonato.tbcampeonato_nome = %s;''', (lista2[j],))
+        print(lista2[j])
+        cur.execute('''select tb_time.tbtime_nome from tb_time inner join tb_partida on tb_time.tbtime_id = tb_partida.tbpartida_time1 inner join tb_campeonato on tb_partida.tbpartida_campeonato = tb_campeonato.tbcampeonato_id where tb_campeonato.tbcampeonato_nome = %s order by tbpartida_id;''', (lista2[j],))
         dadosobtidos = cur.fetchall()
         dadosobtidos = list(dadosobtidos)
         tamanhotime1 = len(dadosobtidos)        
         time1 = []
         for k in range(0, tamanhotime1):
             time1.append(str(dadosobtidos[k][0]))
+            print(dadosobtidos[k][0])
         lista.append(time1)
         lista.append(tamanhotime1)
-        print(lista2[j])
-        cur.execute('''select tb_time.tbtime_nome from tb_time inner join tb_partida on tb_time.tbtime_id = tb_partida.tbpartida_time2 inner join tb_campeonato on tb_partida.tbpartida_campeonato = tb_campeonato.tbcampeonato_id where tb_campeonato.tbcampeonato_nome = %s;''', (lista2[j],))
+        cur.execute('''select tb_time.tbtime_nome from tb_time inner join tb_partida on tb_time.tbtime_id = tb_partida.tbpartida_time2 inner join tb_campeonato on tb_partida.tbpartida_campeonato = tb_campeonato.tbcampeonato_id where tb_campeonato.tbcampeonato_nome = %s order by tbpartida_id;''', (lista2[j],))
         dadosobtidos = cur.fetchall()
         dadosobtidos = list(dadosobtidos)
         tamanhotime1 = len(dadosobtidos)        
